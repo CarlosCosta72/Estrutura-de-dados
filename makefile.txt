@@ -1,0 +1,20 @@
+OBJS	= main.o lista.o
+SOURCE	= main.c lista.c
+HEADER	= lista.h
+OUT	= myproject1
+CC	 = gcc
+FLAGS	 = -g -c -Wall
+LFLAGS	 = 
+
+all: $(OBJS)
+	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
+
+main.o: main.c
+	$(CC) $(FLAGS) main.c 
+
+lista.o: lista.c
+	$(CC) $(FLAGS) lista.c 
+
+
+clean:
+	rm -f $(OBJS) $(OUT)
